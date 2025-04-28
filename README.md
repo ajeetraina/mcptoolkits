@@ -14,12 +14,67 @@ MCPToolkits is a comprehensive suite of tools designed to help you manage, optim
 - **Unified Deployment**: Deploy a single MCP server list to all your clients with one click.
 - **Advanced Configuration Tools**: Fine-tune your MCP servers with specialized configuration tools.
 - **Performance Analytics**: Monitor and optimize your MCP server performance with detailed analytics.
+- **Interactive Dashboard**: Real-time monitoring and management through an intuitive dashboard interface.
 
 ## Getting Started
 
+### Quick Start
+
 1. Clone this repository
-2. Open `index.html` in your browser
-3. Explore the features and functionalities
+   ```bash
+   git clone https://github.com/ajeetraina/mcptoolkits.git
+   cd mcptoolkits
+   ```
+
+2. Access the dashboard
+   - Open `dashboard.html` in your browser for the interactive dashboard
+   - Open `index.html` for the main portal
+
+### Using Docker
+
+1. Build and run with Docker
+   ```bash
+   docker build -t mcptoolkits .
+   docker run -p 8080:80 mcptoolkits
+   ```
+
+2. Access the application
+   - Dashboard: http://localhost:8080/dashboard.html
+   - Portal: http://localhost:8080
+
+For detailed installation instructions, see [INSTALL.md](./INSTALL.md).  
+For dashboard-specific setup, see [DASHBOARD-SETUP.md](./DASHBOARD-SETUP.md).
+
+## Configuration
+
+Configure your MCP servers in the `config/servers.json` file:
+
+```json
+{
+  "servers": [
+    {
+      "name": "Production Server",
+      "host": "mcp-prod.example.com",
+      "port": 443,
+      "protocol": "https",
+      "apiKey": "your-api-key-here",
+      "region": "us-west"
+    }
+  ]
+}
+```
+
+Customize application settings in `config/app.json`.
+
+## Dashboard Features
+
+The interactive dashboard provides:
+
+- **Real-time Server Monitoring**: View server status, latency, and uptime in real-time
+- **Configuration Management**: Monitor and sync server configurations with one click
+- **Performance Analytics**: Track server performance with interactive charts
+- **User Activity Tracking**: Monitor user activity across all your servers
+- **Alerts and Notifications**: Get notified of issues immediately
 
 ## Development
 
@@ -28,11 +83,17 @@ MCPToolkits is a comprehensive suite of tools designed to help you manage, optim
 - Basic understanding of HTML, CSS, and JavaScript
 - Familiarity with web development tools
 
-### Setup
+### Local Development Setup
 
 ```bash
+# Clone the repository
 git clone https://github.com/ajeetraina/mcptoolkits.git
 cd mcptoolkits
+
+# Start a local server
+python -m http.server
+# OR with Node.js
+npx serve
 ```
 
 ## Contributing
