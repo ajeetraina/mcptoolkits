@@ -1,17 +1,30 @@
-FROM nginx:alpine
+FROM node:16-alpine
 
-# Copy the website files to the nginx html directory
-COPY . /usr/share/nginx/html
+WORKDIR /app
 
-# Remove the Dockerfile and other unnecessary files from the image
-RUN rm -f /usr/share/nginx/html/Dockerfile \
-    && rm -f /usr/share/nginx/html/docker-compose.yml \
-    && rm -f /usr/share/nginx/html/*.sh \
-    && rm -rf /usr/share/nginx/html/.git \
-    && rm -rf /usr/share/nginx/html/.github
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
-# Expose port 80
-EXPOSE 80
+# Install dependencies
+RUN npm install
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Copy the rest of the application
+COPY . .
+
+# Create a directory for logs
+RUN mkdir -p logs
+
+# Make sure the config directory exists
+RUN mkdir -p config
+
+# Build the application
+RUN npm run build
+
+# Install serve to run the application
+RUN npm install -g serve
+
+# Expose port 3000
+EXPOSE 3000
+
+# Start the application
+CMD ["serve", "-s", "build", "-l", "3000"]
