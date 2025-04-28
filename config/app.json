@@ -1,0 +1,24 @@
+{
+  "refreshInterval": 30,
+  "theme": "light",
+  "alertThresholds": {
+    "latency": {
+      "warning": 30,
+      "critical": 50
+    },
+    "uptime": {
+      "warning": 99.5,
+      "critical": 99.0
+    },
+    "memory": {
+      "warning": 85,
+      "critical": 95
+    }
+  },
+  "defaultView": "overview",
+  "features": {
+    "enableNotifications": true,
+    "enableHistoricalData": true,
+    "enableExport": true
+  }
+}
