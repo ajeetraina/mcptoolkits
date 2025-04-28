@@ -14,11 +14,37 @@ MCPToolkits is a comprehensive suite of tools designed to help you manage, optim
 - **Unified Deployment**: Deploy a single MCP server list to all your clients with one click.
 - **Advanced Configuration Tools**: Fine-tune your MCP servers with specialized configuration tools.
 - **Performance Analytics**: Monitor and optimize your MCP server performance with detailed analytics.
-- **Interactive Dashboard**: Real-time monitoring and management through an intuitive dashboard interface.
 
-## Getting Started
+## Dashboard
 
-### Quick Start
+The MCPToolkits interactive dashboard provides real-time monitoring and management for your MCP servers:
+
+### Dashboard Metrics Explained
+
+- **Active Servers**: Number of servers that are currently online and responding
+- **Warnings**: Total count of configuration and performance issues requiring attention
+- **Avg. Latency**: Average response time across all your active MCP servers
+- **Active Users**: Total number of users currently connected to your MCP servers
+
+### Server Status Table
+
+The server status table displays:
+
+- **Status**: Current server state (Online, Warning, Offline)
+- **Latency**: Response time in milliseconds
+- **Uptime**: Percentage of time the server has been available
+- **Region**: Geographic location of the server
+
+### Configuration Status
+
+The configuration status chart shows:
+
+- **Synced**: Percentage of configurations that are in sync across your servers
+- **Out of Sync**: Configurations that need to be synchronized
+
+## Quick Start
+
+### Using Docker Compose (Recommended)
 
 1. Clone this repository
    ```bash
@@ -26,21 +52,35 @@ MCPToolkits is a comprehensive suite of tools designed to help you manage, optim
    cd mcptoolkits
    ```
 
-2. Access the dashboard
-   - Open `dashboard.html` in your browser for the interactive dashboard
-   - Open `index.html` for the main portal
-
-### Using Docker
-
-1. Build and run with Docker
+2. Start with Docker Compose
    ```bash
-   docker build -t mcptoolkits .
-   docker run -p 8080:80 mcptoolkits
+   docker-compose up -d
    ```
 
-2. Access the application
-   - Dashboard: http://localhost:8080/dashboard.html
+3. Access MCPToolkits
    - Portal: http://localhost:8080
+   - Dashboard: http://localhost:8080/dashboard.html
+
+### Manual Installation
+
+1. Clone this repository
+   ```bash
+   git clone https://github.com/ajeetraina/mcptoolkits.git
+   cd mcptoolkits
+   ```
+
+2. Start a local server
+   ```bash
+   # Using Python
+   python -m http.server 8080
+   
+   # OR using Node.js
+   npx serve -l 8080
+   ```
+
+3. Access MCPToolkits
+   - Portal: http://localhost:8080
+   - Dashboard: http://localhost:8080/dashboard.html
 
 For detailed installation instructions, see [INSTALL.md](./INSTALL.md).  
 For dashboard-specific setup, see [DASHBOARD-SETUP.md](./DASHBOARD-SETUP.md).
@@ -65,36 +105,6 @@ Configure your MCP servers in the `config/servers.json` file:
 ```
 
 Customize application settings in `config/app.json`.
-
-## Dashboard Features
-
-The interactive dashboard provides:
-
-- **Real-time Server Monitoring**: View server status, latency, and uptime in real-time
-- **Configuration Management**: Monitor and sync server configurations with one click
-- **Performance Analytics**: Track server performance with interactive charts
-- **User Activity Tracking**: Monitor user activity across all your servers
-- **Alerts and Notifications**: Get notified of issues immediately
-
-## Development
-
-### Prerequisites
-
-- Basic understanding of HTML, CSS, and JavaScript
-- Familiarity with web development tools
-
-### Local Development Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/ajeetraina/mcptoolkits.git
-cd mcptoolkits
-
-# Start a local server
-python -m http.server
-# OR with Node.js
-npx serve
-```
 
 ## Contributing
 
