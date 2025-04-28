@@ -97,7 +97,66 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (document.getElementById('syncConfigBtn')) {
         document.getElementById('syncConfigBtn').addEventListener('click', syncConfigurations);
     }
+
+    // Set up navigation tabs
+    setupNavigation();
 });
+
+// Set up navigation tabs
+function setupNavigation() {
+    // Dashboard View is shown by default
+    
+    // Servers Tab
+    const serversTab = document.querySelector('a[href="servers"]');
+    if (serversTab) {
+        serversTab.addEventListener('click', function(e) {
+            e.preventDefault();
+            showServersView();
+        });
+    }
+    
+    // Configuration Tab
+    const configTab = document.querySelector('a[href="configuration"]');
+    if (configTab) {
+        configTab.addEventListener('click', function(e) {
+            e.preventDefault();
+            showConfigView();
+        });
+    }
+    
+    // Analytics Tab
+    const analyticsTab = document.querySelector('a[href="analytics"]');
+    if (analyticsTab) {
+        analyticsTab.addEventListener('click', function(e) {
+            e.preventDefault();
+            showAnalyticsView();
+        });
+    }
+    
+    // Home Tab - goes back to main page
+    const homeTab = document.querySelector('a[href="index.html"]');
+    if (homeTab) {
+        // This already works as a direct link
+    }
+}
+
+// Switch to Servers View
+function showServersView() {
+    // In a full implementation, this would fetch server data and show the servers view
+    alert('Servers view is under development. Check back soon!');
+}
+
+// Switch to Configuration View
+function showConfigView() {
+    // In a full implementation, this would fetch configuration data and show the configuration view
+    alert('Configuration view is under development. Check back soon!');
+}
+
+// Switch to Analytics View
+function showAnalyticsView() {
+    // In a full implementation, this would fetch analytics data and show the analytics view
+    alert('Analytics view is under development. Check back soon!');
+}
 
 // Initialize configuration chart
 function initConfigChart() {
@@ -281,37 +340,3 @@ function syncConfigurations() {
         alert('All configurations synced successfully!');
     }, 2000);
 }
-
-// API Connector for real server communication
-class ServerConnector {
-    constructor() {
-        this.baseUrl = '';
-        this.apiKey = '';
-        this.loadConfigFromStorage();
-    }
-    
-    loadConfigFromStorage() {
-        try {
-            // In a real app, this would load from local storage
-            // or fetch from a central configuration service
-            console.log('Loading API configuration...');
-        } catch (error) {
-            console.error('Error loading API configuration:', error);
-        }
-    }
-    
-    async fetchServerStatus() {
-        // In a production app, this would make an actual API call
-        console.log('Fetching server status...');
-        return serverData;
-    }
-    
-    async syncConfiguration() {
-        // In a production app, this would make an actual API call
-        console.log('Syncing configuration...');
-        return { success: true, message: 'All configurations synced successfully' };
-    }
-}
-
-// Create global API connector
-window.apiConnector = new ServerConnector();
