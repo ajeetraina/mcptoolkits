@@ -49,10 +49,37 @@ const activityData = [
     { type: 'info', icon: 'cog', message: 'Configuration update - Security parameters updated', time: '2 hours ago' },
 ];
 
+// Load configuration from API or local storage
+async function loadConfiguration() {
+    try {
+        // In a real app, this would fetch from the server
+        // For now, we'll try to load from local config files
+        // or use the sample data if not available
+        console.log('Loading configuration...');
+        return {
+            serverData,
+            configStatusData,
+            performanceData,
+            userActivityData
+        };
+    } catch (error) {
+        console.error('Error loading configuration:', error);
+        return {
+            serverData,
+            configStatusData,
+            performanceData,
+            userActivityData
+        };
+    }
+}
+
 // Initialize dashboard
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     // Update last updated time
     document.getElementById('lastUpdated').textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
+    
+    // Load configuration
+    await loadConfiguration();
     
     // Initialize configuration chart
     initConfigChart();
@@ -205,12 +232,14 @@ function refreshDashboard() {
     refreshBtn.classList.add('fa-spin');
     
     // Update timestamp
-    setTimeout(() => {
+    setTimeout(async () => {
         document.getElementById('lastUpdated').textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
         refreshBtn.classList.remove('fa-spin');
         
         // In a real app, we would fetch fresh data here
-        // For this demo, we'll just reinitialize charts
+        await loadConfiguration();
+        
+        // Refresh charts
         initConfigChart();
         initPerformanceChart();
         initUserActivityChart();
@@ -252,3 +281,37 @@ function syncConfigurations() {
         alert('All configurations synced successfully!');
     }, 2000);
 }
+
+// API Connector for real server communication
+class ServerConnector {
+    constructor() {
+        this.baseUrl = '';
+        this.apiKey = '';
+        this.loadConfigFromStorage();
+    }
+    
+    loadConfigFromStorage() {
+        try {
+            // In a real app, this would load from local storage
+            // or fetch from a central configuration service
+            console.log('Loading API configuration...');
+        } catch (error) {
+            console.error('Error loading API configuration:', error);
+        }
+    }
+    
+    async fetchServerStatus() {
+        // In a production app, this would make an actual API call
+        console.log('Fetching server status...');
+        return serverData;
+    }
+    
+    async syncConfiguration() {
+        // In a production app, this would make an actual API call
+        console.log('Syncing configuration...');
+        return { success: true, message: 'All configurations synced successfully' };
+    }
+}
+
+// Create global API connector
+window.apiConnector = new ServerConnector();
