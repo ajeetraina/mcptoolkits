@@ -11,20 +11,18 @@ RUN npm install
 # Copy the rest of the application
 COPY . .
 
-# Create a directory for logs
+# Create directories
 RUN mkdir -p logs
-
-# Make sure the config directory exists
 RUN mkdir -p config
 
 # Build the application
 RUN npm run build
 
-# Install serve to run the application
+# Install serve
 RUN npm install -g serve
 
-# Expose port 3000
-EXPOSE 3000
+# Expose port 80
+EXPOSE 80
 
 # Start the application
-CMD ["serve", "-s", "build", "-l", "3000"]
+CMD ["serve", "-s", "build", "-l", "80"]
