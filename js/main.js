@@ -1,63 +1,39 @@
-// Main JavaScript for MCPToolkits
+// Main JavaScript file for the MCPToolkits portal
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
+    // Initialize any interactive elements
+    initializeNavigation();
+    setupDashboardLinks();
+});
+
+// Mobile navigation toggle
+function initializeNavigation() {
     const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    
-    if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
+    if (mobileMenuButton) {
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            if (mobileMenu) {
+                mobileMenu.classList.toggle('hidden');
+            }
         });
     }
+}
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
+// Set up dashboard links with query parameters if needed
+function setupDashboardLinks() {
+    const dashboardLinks = document.querySelectorAll('a[href="dashboard.html"]');
+    dashboardLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Add any query parameters if needed (e.g., for demo mode)
+            // e.preventDefault();
+            // window.location.href = 'dashboard.html?demo=true';
             
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80, // Account for fixed header
-                    behavior: 'smooth'
-                });
-            }
+            // Track dashboard views (in a real app, this would call analytics)
+            console.log('Dashboard link clicked');
         });
     });
+}
 
-    // Add animation class to elements when they come into view
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.animate-on-scroll');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2;
-            
-            if (elementPosition < screenPosition) {
-                element.classList.add('animate');
-            }
-        });
-    };
-
-    // Run on initial load
-    animateOnScroll();
-    
-    // Run on scroll
-    window.addEventListener('scroll', animateOnScroll);
-});
-
-// Add class to header when scrolling
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('nav');
-    if (header) {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    }
-});
+// Show a welcome message in the console
+console.log('Welcome to MCPToolkits - The ultimate MCP server management solution!');
+console.log('Visit dashboard.html to view the interactive dashboard.');
