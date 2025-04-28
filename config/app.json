@@ -13,12 +13,37 @@
     "memory": {
       "warning": 85,
       "critical": 95
+    },
+    "cpu": {
+      "warning": 75,
+      "critical": 90
+    },
+    "disk": {
+      "warning": 80,
+      "critical": 90
     }
   },
   "defaultView": "overview",
   "features": {
     "enableNotifications": true,
     "enableHistoricalData": true,
-    "enableExport": true
+    "enableExport": true,
+    "enableAutoRefresh": true,
+    "enableDarkMode": false
+  },
+  "charts": {
+    "performance": {
+      "timeRange": "24h",
+      "dataPoints": 12,
+      "metrics": ["latency", "cpu", "memory"]
+    },
+    "userActivity": {
+      "timeRange": "24h",
+      "dataPoints": 12
+    }
+  },
+  "demo": {
+    "enabled": true,
+    "sampleData": true
   }
 }
