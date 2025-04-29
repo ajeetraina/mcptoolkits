@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Directory - MCPToolkits</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .directory-card {
+            border-left: 4px solid #6366f1;
+            transition: all 0.3s ease;
+        }
+        .directory-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .category-title {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background-color: #6366f1;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="index.html" class="text-2xl font-bold text-indigo-600">MCPToolkits</a>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="index.html#about" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-indigo-600">About</a>
+                        <a href="index.html#features" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-indigo-600">Features</a>
+                        <a href="mcp-directory.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium text-indigo-600">MCP Directory</a>
+                        <a href="https://github.com/ajeetraina/mcptoolkits" target="_blank" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-indigo-600">GitHub</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="dashboard.html" class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+                        <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold text-gray-900">MCP Directory</h1>
+            <p class="mt-1 text-sm text-gray-500">A comprehensive directory of Model Context Protocol servers, clients, and tools</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <div class="px-4 py-6 sm:px-0">
+            
+            <!-- Introduction Section -->
+            <div class="bg-white p-6 rounded-lg shadow mb-6">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Introduction</h2>
+                <p class="text-gray-700">
+                    Model Context Protocol (MCP) is a developer-friendly, standardized interface for linking language models and tools together. 
+                    This directory provides a curated collection of MCP servers, clients, and tools to help you build powerful AI applications.
+                </p>
+                <p class="text-gray-700 mt-2">
+                    Whether you're looking to implement MCP servers, find compatible clients, or discover tools that enhance your MCP experience, 
+                    you'll find everything you need in this comprehensive directory.
+                </p>
+            </div>
+
+            <!-- MCP Servers Section -->
+            <div class="bg-white p-6 rounded-lg shadow mb-6">
+                <h2 class="text-2xl font-bold text-gray-900 category-title">MCP Servers</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- GitHub Servers -->
+                    <div class="directory-card bg-white p-4 rounded shadow">
+                        <h3 class="text-lg font-semibold text-indigo-700">GitHub Servers</h3>
+                        <p class="text-sm text-gray-600 mb-2">MCP servers available on GitHub</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-server text-indigo-500 mt-1 mr-2"></i>
+                                <div>
+                                    <a href="https://github.com/modelcontextprotocol/servers" class="text-indigo-600 hover:underline font-medium">Official MCP Reference Servers</a>
+                                    <p class="text-sm text-gray-500">Collection of reference implementations maintained by the MCP team</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-server text-indigo-500 mt-1 mr-2"></i>
+                                <div>
+                                    <a href="https://github.com/AnthropicLabs/mcp-serverless-template-js" class="text-indigo-600 hover:underline font-medium">Serverless MCP Template</a>
+                                    <p class="text-sm text-gray-500">JavaScript template for serverless MCP implementation</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-server text-indigo-500 mt-1 mr-2"></i>
+                                <div>
+                                    <a href="https://github.com/infisical/mcp" class="text-indigo-600 hover:underline font-medium">Infisical MCP Server</a>
+                                    <p class="text-sm text-gray-500">Secure MCP server with credential management</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- WordPress MCP Server -->
+                    <div class="directory-card bg-white p-4 rounded shadow">
+                        <h3 class="text-lg font-semibold text-indigo-700">WordPress MCP Server</h3>
+                        <p class="text-sm text-gray-600 mb-2">MCP integration for WordPress</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-server text-indigo-500 mt-1 mr-2"></i>
+                                <div>
+                                    <a href="https://github.com/wpgpt/wpgpt" class="text-indigo-600 hover:underline font-medium">WP-GPT Plugin</a>
+                                    <p class="text-sm text-gray-500">WordPress plugin for integrating MCP with content management</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-server text-indigo-500 mt-1 mr-2"></i>
+                                <div>
+                                    <a href="https://github.com/automattic/ai-client" class="text-indigo-600 hover:underline font-medium">Automattic AI Client</a>
+                                    <p class="text-sm text-gray-500">AI assistant integration for WordPress with MCP support</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Firecrawl MCP Server -->
+                    <div class="directory-card bg-white p-4 rounded shadow">
+                        <h3 class="text-lg font-semibold text-indigo-700">Firecrawl MCP Server</h3>
+                        <p class="text-sm text-gray-600 mb-2">Web scraping and search capabilities via MCP</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-server text-indigo-500 mt-1 mr-2"></i>
+                                <div>
+                                    <a href="https://github.com/firecrawl/mcp-server" class="text-indigo-600 hover:underline font-medium">Firecrawl MCP</a>
+                                    <p class="text-sm text-gray-500">MCP server for web scraping, search, and data extraction</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Azure MCP Server -->
+                    <div class="directory-card bg-white p-4 rounded shadow">
+                        <h3 class="text-lg font-semibold text-indigo-700">Azure MCP Server</h3>
+                        <p class="text-sm text-gray-600 mb-2">Microsoft Azure implementation of MCP</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-server text-indigo-500 mt-1 mr-2"></i>
+                                <div>
+                                    <a href="https://github.com/Azure/azure-functions-mcp" class="text-indigo-600 hover:underline font-medium">Azure Functions MCP</a>
+                                    <p class="text-sm text-gray-500">Azure Functions implementation for MCP server functionalities</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-server text-indigo-500 mt-1 mr-2"></i>
+                                <div>
+                                    <a href="https://github.com/microsoft/azure-mcp-server" class="text-indigo-600 hover:underline font-medium">Microsoft Azure MCP Server</a>
+                                    <p class="text-sm text-gray-500">Official Microsoft implementation of MCP for Azure</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MCP Clients Section -->
+            <div class="bg-white p-6 rounded-lg shadow mb-6">
+                <h2 class="text-2xl font-bold text-gray-900 category-title">MCP Clients</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Claude Desktop -->
+                    <div class="directory-card bg-white p-4 rounded shadow">
+                        <h3 class="text-lg font-semibold text-indigo-700">Claude Desktop</h3>
+                        <p class="text-sm text-gray-600 mb-2">Desktop application for Claude with MCP support</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-desktop text-indigo-500 mt-1 mr-2"></i>
+                                <div>
+                                    <a href="https://github.com/anthropic/claude-desktop" class="text-indigo-600 hover:underline font-medium">Claude Desktop App</a>
+                                    <p class="text-sm text-gray-500">Official desktop client for Claude with MCP integration</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Gordon -->
+                    <div class="directory-card bg-white p-4 rounded shadow">
+                        <h3 class="text-lg font-semibold text-indigo-700">Gordon</h3>
+                        <p class="text-sm text-gray-600 mb-2">Command-line MCP client</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-terminal text-indigo-500 mt-1 mr-2"></i>
+                                <div>
+                                    <a href="https://github.com/anthropic/gordon" class="text-indigo-600 hover:underline font-medium">Gordon CLI</a>
+                                    <p class="text-sm text-gray-500">Command-line interface for interacting with MCP servers</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- ChatGPT -->
+                    <div class="directory-card bg-white p-4 rounded shadow">
+                        <h3 class="text-lg font-semibold text-indigo-700">ChatGPT</h3>
+                        <p class="text-sm text-gray-600 mb-2">OpenAI's ChatGPT with MCP support</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-comment-alt text-indigo-500 mt-1 mr-2"></i>
+                                <div>
+                                    <a href="https://chat.openai.com" class="text-indigo-600 hover:underline font-medium">ChatGPT</a>
+                                    <p class="text-sm text-gray-500">Web interface for ChatGPT with MCP server integrations</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Winsurf -->
+                    <div class="directory-card bg-white p-4 rounded shadow">
+                        <h3 class="text-lg font-semibold text-indigo-700">Winsurf</h3>
+                        <p class="text-sm text-gray-600 mb-2">Browser-based MCP client</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-window-maximize text-indigo-500 mt-1 mr-2"></i>
+                                <div>
+                                    <a href="https://github.com/winsurf/winsurf" class="text-indigo-600 hover:underline font-medium">Winsurf Browser Client</a>
+                                    <p class="text-sm text-gray-500">Lightweight browser-based client for MCP servers</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MCP Tools Section -->
+            <div class="bg-white p-6 rounded-lg shadow mb-6">
+                <h2 class="text-2xl font-bold text-gray-900 category-title">MCP Tools</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Tools 1 -->
+                    <div class="directory-card bg-white p-4 rounded shadow">
+                        <h3 class="text-lg font-semibold text-indigo-700">Development Tools</h3>
+                        <p class="text-sm text-gray-600 mb-2">Tools for MCP server and client development</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-tools text-indigo-500 mt-1 mr-2"></i>
+                                <div>
+                                    <a href="https://github.com/wong2/mcp-cli" class="text-indigo-600 hover:underline font-medium">MCP CLI</a>
+                                    <p class="text-sm text-gray-500">Command-line inspector for testing MCP servers</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-tools text-indigo-500 mt-1 mr-2"></i>
+                                <div>
+                                    <a href="https://modelcontextprotocol.io/docs/tools/inspector" class="text-indigo-600 hover:underline font-medium">MCP Inspector</a>
+                                    <p class="text-sm text-gray-500">Interactive debugging tool for MCP servers</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tools 2 -->
+                    <div class="directory-card bg-white p-4 rounded shadow">
+                        <h3 class="text-lg font-semibold text-indigo-700">Integration Tools</h3>
+                        <p class="text-sm text-gray-600 mb-2">Tools for integrating MCP with other systems</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-tools text-indigo-500 mt-1 mr-2"></i>
+                                <div>
+                                    <a href="https://github.com/supercorp-ai/supergateway" class="text-indigo-600 hover:underline font-medium">Supergateway</a>
+                                    <p class="text-sm text-gray-500">Run MCP stdio servers over SSE</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-tools text-indigo-500 mt-1 mr-2"></i>
+                                <div>
+                                    <a href="https://zapier.com/mcp" class="text-indigo-600 hover:underline font-medium">Zapier MCP</a>
+                                    <p class="text-sm text-gray-500">MCP Server with over 7,000+ apps and 30,000+ actions</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contribute Section -->
+            <div class="bg-white p-6 rounded-lg shadow mb-6">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Contribute to This Directory</h2>
+                <p class="text-gray-700 mb-4">
+                    This directory is maintained as an open-source project. If you know of additional MCP servers, clients, or tools that should be included, please consider contributing.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://github.com/ajeetraina/mcptoolkits" class="inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+                        <i class="fab fa-github mr-2"></i> Contribute on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <span class="text-2xl font-bold text-white">MCPToolkits</span>
+                    <p class="mt-2 text-sm text-gray-300">
+                        The ultimate directory for MCP servers, clients, and tools
+                    </p>
+                    <div class="mt-4 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://github.com/ajeetraina/mcptoolkits" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Resources</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="index.html#features" class="text-base text-gray-300 hover:text-white">Features</a></li>
+                        <li><a href="mcp-directory.html" class="text-base text-gray-300 hover:text-white">MCP Directory</a></li>
+                        <li><a href="dashboard.html" class="text-base text-gray-300 hover:text-white">Dashboard</a></li>
+                        <li><a href="https://modelcontextprotocol.io/" class="text-base text-gray-300 hover:text-white">MCP Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Company</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Contact</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
+                <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
+                    © 2025 MCPToolkits. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
