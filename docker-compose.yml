@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  mcptoolkits:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./config:/usr/share/nginx/html/config
+      - ./logs:/usr/share/nginx/html/logs
+    restart: unless-stopped

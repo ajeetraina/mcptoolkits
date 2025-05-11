@@ -1,0 +1,49 @@
+{
+  "servers": [
+    {
+      "name": "Production Server",
+      "host": "mcp-prod.example.com",
+      "port": 443,
+      "protocol": "https",
+      "apiKey": "YOUR_API_KEY_HERE",
+      "region": "us-west",
+      "tags": ["production", "primary"]
+    },
+    {
+      "name": "Development Server",
+      "host": "mcp-dev.example.com",
+      "port": 443,
+      "protocol": "https",
+      "apiKey": "YOUR_DEV_API_KEY_HERE",
+      "region": "us-east",
+      "tags": ["development", "testing"]
+    },
+    {
+      "name": "Staging Server",
+      "host": "mcp-staging.example.com",
+      "port": 443,
+      "protocol": "https",
+      "apiKey": "YOUR_STAGING_API_KEY_HERE",
+      "region": "eu-central",
+      "tags": ["staging", "pre-prod"]
+    },
+    {
+      "name": "Analytics Server",
+      "host": "mcp-analytics.example.com",
+      "port": 443,
+      "protocol": "https",
+      "apiKey": "YOUR_ANALYTICS_API_KEY_HERE",
+      "region": "ap-east",
+      "tags": ["analytics", "data"]
+    },
+    {
+      "name": "Backup Server",
+      "host": "mcp-backup.example.com",
+      "port": 443,
+      "protocol": "https",
+      "apiKey": "YOUR_BACKUP_API_KEY_HERE",
+      "region": "us-central",
+      "tags": ["backup", "recovery"]
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCPToolkits Dashboard Guide</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="index.html" class="text-2xl font-bold text-indigo-600">MCPToolkits</a>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="index.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-indigo-600">Home</a>
+                        <a href="dashboard.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-indigo-600">Dashboard</a>
+                        <a href="dashboard-guide.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-indigo-600 border-b-2 border-indigo-600">Dashboard Guide</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="prose prose-indigo max-w-none">
+            <h1>Understanding the MCPToolkits Dashboard</h1>
+            
+            <p class="lead">
+                This guide explains the metrics and information displayed on your MCPToolkits dashboard.
+            </p>
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                <p class="text-blue-700">
+                    <strong>Note:</strong> The current dashboard shows sample data to demonstrate functionality. In your production environment, it will display real data from your MCP servers.
+                </p>
+            </div>
+
+            <h2>Overview Section</h2>
+            
+            <p>The top section of the dashboard displays key metrics about your MCP server infrastructure:</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 not-prose">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-green-100 text-green-600">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-500">Active Servers</p>
+                            <p class="text-2xl font-semibold text-gray-900">4</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-base text-gray-600">
+                            <strong>Active Servers:</strong> Shows the number of MCP servers that are currently online and responding. This helps you quickly see the overall health of your infrastructure.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-yellow-100 text-yellow-600">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-500">Warnings</p>
+                            <p class="text-2xl font-semibold text-gray-900">3</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-base text-gray-600">
+                            <strong>Warnings:</strong> The total number of issues requiring attention across your MCP infrastructure, including both configuration issues and performance warnings.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-indigo-100 text-indigo-600">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-500">Avg. Latency</p>
+                            <p class="text-2xl font-semibold text-gray-900">23ms</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-base text-gray-600">
+                            <strong>Average Latency:</strong> The average response time across all your active MCP servers, measured in milliseconds. Lower values indicate better performance.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-blue-100 text-blue-600">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-500">Active Users</p>
+                            <p class="text-2xl font-semibold text-gray-900">571</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-base text-gray-600">
+                            <strong>Active Users:</strong> The total number of users currently connected to and using your MCP servers. Helps track usage patterns and capacity planning.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Server Status Table</h2>
+            
+            <p>The server status table provides detailed information about each individual MCP server in your infrastructure:</p>
+
+            <ul>
+                <li><strong>Server:</strong> The name of the MCP server</li>
+                <li><strong>Status:</strong> Current server state
+                    <ul>
+                        <li><span class="text-green-600 font-medium">Online</span> - Server is operating normally</li>
+                        <li><span class="text-yellow-600 font-medium">Warning</span> - Server is experiencing issues but is still operational</li>
+                        <li><span class="text-red-600 font-medium">Offline</span> - Server is not responding or unavailable</li>
+                    </ul>
+                </li>
+                <li><strong>Latency:</strong> Response time measured in milliseconds - lower is better</li>
+                <li><strong>Uptime:</strong> Percentage of time the server has been available</li>
+                <li><strong>Region:</strong> Geographic location of the server</li>
+            </ul>
+
+            <h2>Configuration Status</h2>
+            
+            <p>The configuration status chart shows how many of your MCP server configurations are properly synchronized:</p>
+
+            <ul>
+                <li><strong>Synced:</strong> Number and percentage of configurations that are in sync across your MCP servers</li>
+                <li><strong>Out of Sync:</strong> Number and percentage of configurations that need to be synchronized</li>
+            </ul>
+
+            <p>
+                The "Sync All Configurations" button allows you to synchronize all configurations with a single click, ensuring consistency across your entire MCP infrastructure.
+            </p>
+
+            <h2>Performance Charts</h2>
+            
+            <p>
+                The dashboard includes charts displaying performance metrics over time:
+            </p>
+
+            <ul>
+                <li><strong>Performance Chart:</strong> Shows latency trends over the past 24 hours, helping you identify performance patterns and potential issues</li>
+                <li><strong>User Activity Chart:</strong> Shows the number of active users over time, helping you understand usage patterns and capacity requirements</li>
+            </ul>
+
+            <h2>Recent Activity</h2>
+            
+            <p>
+                The Recent Activity section displays the latest events and alerts from your MCP servers, such as:
+            </p>
+
+            <ul>
+                <li>Configuration changes and syncs</li>
+                <li>Performance warnings</li>
+                <li>Server status changes</li>
+                <li>System updates and maintenance</li>
+            </ul>
+
+            <h2>Navigation Tabs</h2>
+            
+            <p>
+                The dashboard has four main navigation tabs at the top:
+            </p>
+
+            <ul>
+                <li><strong>Overview:</strong> The main dashboard view with key metrics and status information</li>
+                <li><strong>Servers:</strong> Detailed view of all your MCP servers with in-depth metrics and management options</li>
+                <li><strong>Configuration:</strong> Advanced configuration management for your MCP servers</li>
+                <li><strong>Analytics:</strong> Detailed performance analytics and reports</li>
+            </ul>
+
+            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 my-6">
+                <p class="text-yellow-700">
+                    <strong>Note:</strong> This is a demo version of the dashboard. In your production environment, all tabs will be fully functional with your actual MCP server data.
+                </p>
+            </div>
+
+            <a href="dashboard.html" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 mt-6">
+                <i class="fas fa-tachometer-alt mr-2"></i> Return to Dashboard
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 mt-12">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-base text-gray-400">
+                ? 2025 MCPToolkits. All rights reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
