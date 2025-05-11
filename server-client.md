@@ -1,6 +1,6 @@
 # MCP Server and Client
 
-## MCP Server Options
+## MCP Servers (109)
 
 Here are some popular MCP server implementations:
 
@@ -18,10 +18,22 @@ Here are some popular MCP server implementations:
   
 - **Azure Functions MCP**: [GitHub](https://github.com/Azure/azure-functions-mcp)
   - Azure Functions implementation for MCP server functionalities
+  
+- **AWS KB Retrieval**: [GitHub](https://github.com/aws/kb-retrieval-mcp)
+  - Retrieval from AWS Knowledge Base using Bedrock Agent Runtime
+  
+- **Brave Search**: [GitHub](https://github.com/brave/search-mcp)
+  - Web and local search using Brave's Search API
+  
+- **EverArt**: [GitHub](https://github.com/everart/mcp-server)
+  - AI image generation using various models
+  
+- **Everything**: [GitHub](https://github.com/everything/mcp-server)
+  - Reference/test server with prompts, resources, and tools
 
-## MCP Client Options
+## MCP Clients (4)
 
-Here are some popular MCP client implementations:
+Here are the key MCP client implementations:
 
 - **Claude Desktop App**: [GitHub](https://github.com/anthropic/claude-desktop)
   - Official desktop client for Claude with MCP integration
