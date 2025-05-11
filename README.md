@@ -14,6 +14,7 @@ MCPToolkits is a comprehensive suite of tools designed to help you manage, optim
 - **Unified Deployment**: Deploy a single MCP server list to all your clients with one click.
 - **Advanced Configuration Tools**: Fine-tune your MCP servers with specialized configuration tools.
 - **Performance Analytics**: Monitor and optimize your MCP server performance with detailed analytics.
+- **MCP Server and Client**: Browse through a curated list of [MCP Servers and Clients](./server-client.md) to enhance your implementation.
 
 ## Dashboard
 
